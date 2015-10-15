@@ -1,4 +1,4 @@
-package br.org.owail.sender;
+package br.org.owail.sender.email;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,10 @@ public class Email {
 	this.from = from;
     }
 
+    public void setFrom(String name, String email, String password) {
+	setFrom(new Sender(name, email, password));
+    }
+
     public List<Recipient> getToRecipients() {
 	return toRecipientList;
     }
@@ -45,6 +49,10 @@ public class Email {
 
     public void addToRecipient(Recipient recipient) {
 	toRecipientList.add(recipient);
+    }
+
+    public void addToRecipient(String name, String email) {
+	toRecipientList.add(new Recipient(name, email));
     }
 
 }

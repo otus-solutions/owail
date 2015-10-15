@@ -1,4 +1,4 @@
-package br.org.owail.sender;
+package br.org.owail.sender.email;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
@@ -7,6 +7,10 @@ import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
 
 import org.junit.Test;
+
+import br.org.owail.sender.email.Email;
+import br.org.owail.sender.email.Recipient;
+import br.org.owail.sender.email.Sender;
 
 public class EmailTest {
 

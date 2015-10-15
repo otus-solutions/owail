@@ -1,10 +1,13 @@
-package br.org.owail.sender;
+package br.org.owail.sender.email;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 
 import org.junit.Test;
+
+import br.org.owail.sender.email.EmailUser;
+import br.org.owail.sender.email.Sender;
 
 public class SendTest {
 

@@ -1,4 +1,4 @@
-package br.org.owail.sender;
+package br.org.owail.sender.email;
 
 public class Recipient implements EmailUser {
 
