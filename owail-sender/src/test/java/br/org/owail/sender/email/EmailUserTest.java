@@ -5,9 +5,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Test;
 
-import br.org.owail.sender.email.EmailUser;
-import br.org.owail.sender.email.Recipient;
-
 public class EmailUserTest {
 
     private static final String NAME = "Email User";
@@ -15,14 +12,14 @@ public class EmailUserTest {
 
     @Test
     public void an_EmailUser_should_have_a_name() {
-	EmailUser emailUser = new Recipient(NAME, EMAIL_ADDRESS);
+	EmailUser emailUser = Recipient.createTO(NAME, EMAIL_ADDRESS);
 
 	assertThat(emailUser.getName(), equalTo(NAME));
     }
 
     @Test
     public void an_EmailUser_should_have_an_email_address() {
-	EmailUser emailUser = new Recipient(NAME, EMAIL_ADDRESS);
+	EmailUser emailUser = Recipient.createTO(NAME, EMAIL_ADDRESS);
 
 	assertThat(emailUser.getEmailAddress(), equalTo(EMAIL_ADDRESS));
     }

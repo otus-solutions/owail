@@ -9,10 +9,10 @@ public class Email {
     private String subject;
     private String messageText;
 
-    private List<Recipient> toRecipientList;
+    private List<Recipient> recipients;
 
     public Email() {
-	toRecipientList = new ArrayList<Recipient>();
+	recipients = new ArrayList<>();
     }
 
     public Sender getFrom() {
@@ -27,8 +27,8 @@ public class Email {
 	setFrom(new Sender(name, email, password));
     }
 
-    public List<Recipient> getToRecipients() {
-	return toRecipientList;
+    public List<Recipient> getRecipients() {
+	return recipients;
     }
 
     public String getSubject() {
@@ -47,12 +47,20 @@ public class Email {
 	this.messageText = messageText;
     }
 
-    public void addToRecipient(Recipient recipient) {
-	toRecipientList.add(recipient);
+    public void addRecipient(Recipient recipient) {
+	recipients.add(recipient);
     }
 
-    public void addToRecipient(String name, String email) {
-	toRecipientList.add(new Recipient(name, email));
+    public void addTORecipient(String name, String email) {
+	recipients.add(Recipient.createTO(name, email));
+    }
+
+    public void addCCRecipient(String name, String email) {
+	recipients.add(Recipient.createCC(name, email));
+    }
+
+    public void addBCCRecipient(String name, String email) {
+	recipients.add(Recipient.createBCC(name, email));
     }
 
 }

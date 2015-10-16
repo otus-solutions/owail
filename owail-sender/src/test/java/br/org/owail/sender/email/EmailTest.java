@@ -8,10 +8,6 @@ import static org.hamcrest.Matchers.notNullValue;
 
 import org.junit.Test;
 
-import br.org.owail.sender.email.Email;
-import br.org.owail.sender.email.Recipient;
-import br.org.owail.sender.email.Sender;
-
 public class EmailTest {
 
     private static final String MESSAGE_TEXT = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
@@ -28,7 +24,7 @@ public class EmailTest {
     public void an_Email_should_have_at_least_one_recipient_address() {
 	Email email = buildEmail();
 
-	assertThat(email.getToRecipients().size(), greaterThan(0));
+	assertThat(email.getRecipients().size(), greaterThan(0));
     }
 
     @Test
@@ -49,7 +45,7 @@ public class EmailTest {
 	Email email = new Email();
 
 	email.setFrom(buildSender());
-	email.addToRecipient(buildRecipient());
+	email.addRecipient(buildRecipient());
 	email.setSubject(EMAIL_SUBJECT);
 	email.setMessageText(MESSAGE_TEXT);
 
@@ -68,7 +64,7 @@ public class EmailTest {
 	String name = "Recipient Name";
 	String emailAddress = "recipient.address@domail.com";
 
-	return new Recipient(name, emailAddress);
+	return Recipient.createTO(name, emailAddress);
     }
 
 }

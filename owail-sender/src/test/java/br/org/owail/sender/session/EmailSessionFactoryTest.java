@@ -5,19 +5,19 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import br.org.owail.sender.email.Sender;
-import br.org.owail.sender.gmail.SmtpTlsProperties;
+import br.org.owail.sender.gmail.SMTPTLSProperties;
 import br.org.owail.sender.session.EmailSessionFactory;
 
 @Ignore
 public class EmailSessionFactoryTest {
 
     private Sender sender;
-    private SmtpTlsProperties smtpTlsProperties;
+    private SMTPTLSProperties smtpTlsProperties;
 
     @Before
     public void setup() {
 	sender = new Sender("Sender Name", "sender@domail.com", "password");
-	smtpTlsProperties = new SmtpTlsProperties();
+	smtpTlsProperties = new SMTPTLSProperties();
     }
 
     @Test
