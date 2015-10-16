@@ -8,7 +8,6 @@ import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import br.org.owail.sender.gmail.EmailCompositionException;
 import br.org.owail.sender.session.EmailSessionFactory;
 import br.org.owail.sender.session.SMTPSessionProperties;
 

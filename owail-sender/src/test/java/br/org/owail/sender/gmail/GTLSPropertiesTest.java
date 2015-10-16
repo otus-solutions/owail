@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import br.org.owail.sender.session.SMTPProperties;
 
-public class SMTPTLSPropertiesTest {
+public class GTLSPropertiesTest {
 
     private static final Boolean SMTP_AUTH = true;
     private static final Boolean SMTP_STARTTLS = true;
@@ -18,35 +18,35 @@ public class SMTPTLSPropertiesTest {
 
     @Test
     public void auth_value_should_be_TRUE() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	assertThat(properties.getAuth(), equalTo(SMTP_AUTH));
     }
 
     @Test
     public void starttls_value_should_be_TRUE() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	assertThat(properties.getStartTls(), equalTo(SMTP_STARTTLS));
     }
 
     @Test
     public void host_value_should_be_smtp_gmail_com() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	assertThat(properties.getHost(), equalTo(SMTP_HOST));
     }
 
     @Test
     public void port_value_should_be_587() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	assertThat(properties.getPort(), equalTo(SMTP_PORT));
     }
 
     @Test
     public void properties_build_should_have_auth_value_equal_to_TRUE() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	Properties build = properties.buildProperties();
 	String key = SMTPProperties.AUTH.asString();
@@ -56,7 +56,7 @@ public class SMTPTLSPropertiesTest {
 
     @Test
     public void properties_build_should_have_starttls_value_equal_to_TRUE() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	Properties build = properties.buildProperties();
 	String key = SMTPProperties.STARTTLS_ENABLE.asString();
@@ -66,7 +66,7 @@ public class SMTPTLSPropertiesTest {
 
     @Test
     public void properties_build_should_have_host_value_equal_to_smtp_gmail_com() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	Properties build = properties.buildProperties();
 	String key = SMTPProperties.HOST.asString();
@@ -76,7 +76,7 @@ public class SMTPTLSPropertiesTest {
 
     @Test
     public void properties_build_should_have_port_value_equal_to_587() {
-	SMTPTLSProperties properties = new SMTPTLSProperties();
+	GTLSProperties properties = new GTLSProperties();
 
 	Properties build = properties.buildProperties();
 	String key = SMTPProperties.PORT.asString();

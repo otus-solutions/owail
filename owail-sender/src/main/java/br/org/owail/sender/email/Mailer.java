@@ -4,7 +4,6 @@ import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Transport;
 
-import br.org.owail.sender.gmail.EmailCompositionException;
 import br.org.owail.sender.session.SMTPSessionProperties;
 
 public class Mailer {

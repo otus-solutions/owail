@@ -4,10 +4,10 @@ import java.util.Properties;
 
 import javax.mail.MessagingException;
 
+import br.org.owail.sender.email.EmailCompositionException;
 import br.org.owail.sender.email.Mailer;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
-import br.org.owail.sender.gmail.EmailCompositionException;
 import br.org.owail.sender.session.SMTPProperties;
 import br.org.owail.sender.session.SMTPSessionProperties;
 

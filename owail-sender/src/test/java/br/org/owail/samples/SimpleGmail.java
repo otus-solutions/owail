@@ -2,10 +2,10 @@ package br.org.owail.samples;
 
 import javax.mail.MessagingException;
 
+import br.org.owail.sender.email.EmailCompositionException;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
-import br.org.owail.sender.gmail.EmailCompositionException;
-import br.org.owail.sender.gmail.GmailMailer;
+import br.org.owail.sender.gmail.GMailer;
 
 /**
  * SimpleGmail sample
@@ -16,7 +16,7 @@ import br.org.owail.sender.gmail.GmailMailer;
 public class SimpleGmail {
 
     public static void main(String[] args) {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 	
 	/* Configure email sender */
 	mailer.setFrom(new Sender("Sender Name", "gmail.account.user", "the_password"));
