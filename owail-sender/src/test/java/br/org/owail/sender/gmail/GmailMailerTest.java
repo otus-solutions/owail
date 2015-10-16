@@ -19,6 +19,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import br.org.owail.sender.email.Email;
+import br.org.owail.sender.email.MessageWrapper;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
 

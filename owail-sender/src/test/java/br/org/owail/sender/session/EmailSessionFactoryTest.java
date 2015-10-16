@@ -22,7 +22,7 @@ public class EmailSessionFactoryTest {
 
     @Test
     public void newGmailTlsSession_method_should_return_a_mail_Session() {
-	EmailSessionFactory.newGmailSession(smtpTlsProperties.buildProperties(), sender);
+	EmailSessionFactory.newSession(smtpTlsProperties.buildProperties(), sender);
     }
 
 }
