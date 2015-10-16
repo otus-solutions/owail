@@ -15,7 +15,7 @@ import br.org.owail.sender.session.SMTPSessionProperties;
  * CustomSending sample
  * 
  * This is a example of sending email with the the default Mailer.
- * With this Mailer you have to tell the your SMTP session properties for your SMTP server. 
+ * With this Mailer you have to tell your SMTP session properties for your SMTP server. 
  */
 public class CustomSending {
 
