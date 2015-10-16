@@ -23,7 +23,7 @@ public class CustomSending {
 	Mailer mailer = Mailer.createTLSMailer(new MyCustomSMTPSessionProps());
 
 	/* Configure email sender */
-	mailer.setFrom(new Sender("Sender Name", "gmail.account.user", "the_password"));
+	mailer.setFrom(new Sender("Sender Name", "account.user", "the_password"));
 
 	/* Configure email recipients */
 	mailer.addRecipient(Recipient.createTO("Recipient TO", "recipient.to@domain.com")); 	// main
