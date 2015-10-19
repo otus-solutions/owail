@@ -2,24 +2,29 @@ package br.org.owail.samples;
 
 import javax.mail.MessagingException;
 
+import br.org.owail.sender.email.EmailCompositionException;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
-import br.org.owail.sender.gmail.EmailCompositionException;
-import br.org.owail.sender.gmail.GmailMailer;
+import br.org.owail.sender.gmail.GMailer;
 
+/**
+ * SimpleGmail sample
+ * 
+ * This is a example of sending email with the GmailMailer.
+ * With this Mailer you do not have to worry about the SMTP Gmail settings. 
+ */
 public class SimpleGmail {
 
     public static void main(String[] args) {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 	
 	/* Configure email sender */
-	mailer.setFrom(new Sender("Sender Name", "gmail.account@address.com", "the_password"));
+	mailer.setFrom(new Sender("Sender Name", "gmail.account.user", "the_password"));
 	
 	/* Configure email recipients */
-	mailer.addRecipient(Recipient.createTO("DevGroup", "desenvolvimento-elsa@googlegroups.com")); 	// main
-	mailer.addRecipient(Recipient.createCC("Diogo Ferreira", "diogo.rosas.ferreira@gmail.com")); 	// carbon copy
-	mailer.addRecipient(Recipient.createCC("Fagner Schwalm", "fagnerschwalm@gmail.com")); 		// carbon copy
-	mailer.addRecipient(Recipient.createBCC("Diego Santos", "santos.diegoferreira@gmail.com")); 	// blind carbon copy
+	mailer.addRecipient(Recipient.createTO("Recipient TO", "recipient.to@domain.com")); 	// main
+	mailer.addRecipient(Recipient.createCC("Recipient CC", "recipient.cc@domain.com")); 	// carbon copy
+	mailer.addRecipient(Recipient.createBCC("Recipient BCC", "recipient.bcc@domain.com")); 	// blind carbon copy
 	
 	/* Configure the email message */
 	mailer.setSubject("Simple Gmail Test!");

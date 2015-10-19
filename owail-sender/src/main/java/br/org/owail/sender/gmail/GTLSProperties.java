@@ -2,10 +2,10 @@ package br.org.owail.sender.gmail;
 
 import java.util.Properties;
 
-import br.org.owail.sender.gmail.GmailProperties;
 import br.org.owail.sender.session.SMTPProperties;
+import br.org.owail.sender.session.SMTPSessionProperties;
 
-public class SMTPTLSProperties implements GmailProperties {
+public class GTLSProperties implements SMTPSessionProperties {
 
     private static final String MAIL_SMTP_HOST_VALUE = "smtp.gmail.com";
     private static final String MAIL_SMTP_PORT_VALUE = "587";

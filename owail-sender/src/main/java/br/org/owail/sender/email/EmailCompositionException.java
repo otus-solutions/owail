@@ -1,4 +1,4 @@
-package br.org.owail.sender.gmail;
+package br.org.owail.sender.email;
 
 public class EmailCompositionException extends Exception {
 

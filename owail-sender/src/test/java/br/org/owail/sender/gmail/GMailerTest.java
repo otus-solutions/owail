@@ -19,19 +19,21 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import br.org.owail.sender.email.Email;
+import br.org.owail.sender.email.EmailCompositionException;
+import br.org.owail.sender.email.MessageWrapper;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({ GmailMailer.class, EmailCompositionException.class, Transport.class, MessageWrapper.class })
-public class GmailMailerTest {
+@PrepareForTest({ GMailer.class, EmailCompositionException.class, Transport.class, MessageWrapper.class })
+public class GMailerTest {
 
     @Mock
     public Sender senderMock;
     @Mock
     public Email emailMock;
     @Mock
-    public SMTPTLSProperties propertiesMock;
+    public GTLSProperties propertiesMock;
     @Mock
     public Message messageMock;
     @Mock
@@ -45,7 +47,7 @@ public class GmailMailerTest {
     @Before
     public void setup() throws Exception {
 	PowerMockito.whenNew(Email.class).withNoArguments().thenReturn(emailMock);
-	PowerMockito.whenNew(SMTPTLSProperties.class).withNoArguments().thenReturn(propertiesMock);
+	PowerMockito.whenNew(GTLSProperties.class).withNoArguments().thenReturn(propertiesMock);
 
 	PowerMockito.mockStatic(EmailCompositionException.class);
 	PowerMockito.mockStatic(Transport.class);
@@ -69,14 +71,14 @@ public class GmailMailerTest {
 
     @Test
     public void createTLSMailer_method_should_return_a_GmailMailer_instance() {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	MatcherAssert.assertThat(mailer, Matchers.notNullValue());
     }
 
     @Test
     public void setFrom_method_should_call_setFrom_method_of_Email() {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	mailer.setFrom(senderMock);
 
@@ -85,7 +87,7 @@ public class GmailMailerTest {
 
     @Test
     public void addRecipient_method_should_call_addRecipient_method_of_Email() {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	mailer.addRecipient(recipient);
 
@@ -94,7 +96,7 @@ public class GmailMailerTest {
 
     @Test
     public void setSubject_method_should_call_setSubject_method_of_Email() {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	mailer.setSubject(stringMock);
 
@@ -103,7 +105,7 @@ public class GmailMailerTest {
 
     @Test
     public void setMessageText_method_should_call_setMessage_method_of_Email() {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	mailer.setMessageText(stringMock);
 
@@ -112,7 +114,7 @@ public class GmailMailerTest {
 
     @Test
     public void send_method_should_call_wrap_from_MessageWrapper() throws EmailCompositionException, MessagingException {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	mailer.send();
 
@@ -123,7 +125,7 @@ public class GmailMailerTest {
     @Test
     public void send_method_should_call_send_method_from_Transport() throws EmailCompositionException,
 	    MessagingException {
-	GmailMailer mailer = GmailMailer.createTLSMailer();
+	GMailer mailer = GMailer.createTLSMailer();
 
 	mailer.send();
 

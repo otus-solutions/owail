@@ -10,7 +10,7 @@ import br.org.owail.sender.email.Sender;
 
 public class EmailSessionFactory {
 
-    public static Session newGmailSession(Properties properties, Sender sender) {
+    public static Session newSession(Properties properties, Sender sender) {
 	Session session = Session.getInstance(properties, new Authenticator() {
 	    @Override
 	    protected PasswordAuthentication getPasswordAuthentication() {

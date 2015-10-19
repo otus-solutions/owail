@@ -2,9 +2,9 @@ package br.org.owail.sender.session;
 
 import javax.mail.MessagingException;
 
+import br.org.owail.sender.email.EmailCompositionException;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
-import br.org.owail.sender.gmail.EmailCompositionException;
 
 public interface Mailer {
 
