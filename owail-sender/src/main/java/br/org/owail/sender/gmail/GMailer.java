@@ -4,7 +4,7 @@ import br.org.owail.sender.email.Mailer;
 import br.org.owail.sender.session.SMTPSessionProperties;
 
 public class GMailer extends Mailer {
-
+    
     protected GMailer(SMTPSessionProperties properties) {
 	super(properties);
     }

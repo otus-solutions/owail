@@ -2,9 +2,6 @@ package br.org.owail.samples;
 
 import java.util.Properties;
 
-import javax.mail.MessagingException;
-
-import br.org.owail.sender.email.EmailCompositionException;
 import br.org.owail.sender.email.Mailer;
 import br.org.owail.sender.email.Recipient;
 import br.org.owail.sender.email.Sender;
@@ -32,11 +29,11 @@ public class CustomSending {
 
 	/* Configure the email message */
 	mailer.setSubject("Simple Gmail Test!");
-	mailer.setMessageText("This is the message body.");
+	mailer.setContent("This is the message body.");
 
 	try {
 	    mailer.send();
-	} catch (EmailCompositionException | MessagingException e) {
+	} catch (Exception e) {
 	    System.out.println("Oh no...");
 	}
     }

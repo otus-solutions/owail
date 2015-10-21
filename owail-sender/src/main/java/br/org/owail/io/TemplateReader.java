@@ -1,44 +1,45 @@
 package br.org.owail.io;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.stream.Stream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class TemplateReader {
 
-	private static String TEMPLATE_PATH = "src/main/resources/templates/";
-	private StringBuilder stringFile;
+    public TemplateReader() {
+	super();
+    }
 
-	public TemplateReader() {
-		super();
-		stringFile = new StringBuilder();
-	}
+    public String getFileToString(ClassLoader classLoader, String fileName) {
+	return openfile(classLoader.getResourceAsStream(fileName));
+    }
 
-	public String getFileToString(String fileName) {
-		Stream<String> lines = openfile(fileName);
-		lines.forEach(line -> stringFile.append(line));
-		return stringFile.toString();
-	}
+    private String openfile(InputStream fileStream) {
+	try {
+	    BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
+	    String line = null;
+	    StringBuffer content = new StringBuffer();
 
-	private Stream<String> openfile(String fileName) {
-		try {
-			Stream<String> lines = Files.lines(Paths.get(TEMPLATE_PATH + fileName));
-			return lines;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+	    while ((line = reader.readLine()) != null) {
+		content.append(line);
+	    }
 
-	public String fillTemplate(HashMap<String,String> values, String template) {
-		String aux = "";
-		for (String key : values.keySet()) {
-			aux = template.replace(key, values.get(key));
-			template = aux;
-		}
-		return template;
+	    reader.close();
+	    return content.toString();
+	} catch (IOException e) {
+	    e.printStackTrace();
 	}
+	return null;
+    }
+
+    public String fillTemplate(Map<String, String> values, String template) {
+	for (Entry<String, String> entry : values.entrySet()) {
+	    template = template.replaceAll("\\{\\{" + entry.getKey() + "\\}\\}", entry.getValue());
+	}
+	return template;
+    }
 
 }

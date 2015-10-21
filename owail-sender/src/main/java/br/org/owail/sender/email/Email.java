@@ -12,7 +12,7 @@ public class Email {
     private List<Recipient> recipients;
 
     public Email() {
-	recipients = new ArrayList<>();
+	recipients = new ArrayList<Recipient>();
     }
 
     public Sender getFrom() {

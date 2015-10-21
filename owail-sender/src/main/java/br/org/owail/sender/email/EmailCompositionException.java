@@ -19,9 +19,4 @@ public class EmailCompositionException extends Exception {
 	super(message, cause);
     }
 
-    public EmailCompositionException(String message, Throwable cause, boolean enableSuppression,
-	    boolean writableStackTrace) {
-	super(message, cause, enableSuppression, writableStackTrace);
-    }
-
 }
