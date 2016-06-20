@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>owail-sender</artifactId>
 	<parent>
-		<groupId>br.org.owail</groupId>
+		<groupId>org.ccem.owail</groupId>
 		<artifactId>owail-root</artifactId>
 		<version>0.0.4-SNAPSHOT</version>
 		<relativePath>../owail-root/pom.xml</relativePath>
