@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.ccem.owail</groupId>
 		<artifactId>owail-root</artifactId>
-		<version>0.0.4-SNAPSHOT</version>
+		<version>1.0.4-SNAPSHOT</version>
 		<relativePath>../owail-root/pom.xml</relativePath>
 	</parent>
 
