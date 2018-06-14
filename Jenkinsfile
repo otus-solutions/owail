@@ -6,7 +6,7 @@ pipeline {
   }
 
   stages {
-    stage('Build Aplication') {
+    stage('Build') {
       steps {
         sh 'mvn -f owail-sender/pom.xml clean install'
       }
